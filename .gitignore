@@ -37,3 +37,6 @@ build/
 *.sqlite
 *.sqlite3
 
+# Local handoff documentation
+agent-shield-app/docs/PROJECT_SESSION_HANDOFF.md
+
