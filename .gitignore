@@ -1,0 +1,39 @@
+# Local agent and editor metadata
+.agents/
+.codex/
+.idea/
+.vscode/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/.oci/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies, caches, and build output
+.venv/
+**/.venv/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+**/dist/
+build/
+**/build/
+*.log
+
+# Local runtime data
+*.db
+*.sqlite
+*.sqlite3
+

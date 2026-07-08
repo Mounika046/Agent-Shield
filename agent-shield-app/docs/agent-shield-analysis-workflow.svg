@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1080" viewBox="0 0 2000 1080" role="img" aria-labelledby="title desc">
+  <title id="title">AgentShield analysis workflow</title>
+  <desc id="desc">The shared AgentShield processing pipeline from normalized scan target through dependency acquisition, version coverage, license metadata, CVE research, mode enrichment, structured result preparation, external providers and final outputs.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123744"/>
+      <stop offset="0.62" stop-color="#1c5961"/>
+      <stop offset="1" stop-color="#31706f"/>
+    </linearGradient>
+    <linearGradient id="pipelineBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafb"/>
+      <stop offset="1" stop-color="#edf3f4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#46636d"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#76538d"/>
+    </marker>
+    <style>
+      * { filter: none; }
+      .title { font: 700 36px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .subtitle { font: 500 18px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .lane { font: 700 14px 'Segoe UI', Arial, sans-serif; letter-spacing: 1.6px; fill: #000000; }
+      .box-title { font: 700 19px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .box-text { font: 500 14px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .small { font: 500 13px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .step { font: 700 14px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .provider-title { font: 700 16px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .provider-text { font: 500 13px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .output-title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #000000; }
+      .arrow { fill: none; stroke: #46636d; stroke-width: 3; marker-end: url(#arrow); }
+      .purple-arrow { fill: none; stroke: #76538d; stroke-width: 3; marker-end: url(#arrowPurple); }
+      .provider-arrow { fill: none; stroke: #81959c; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="2000" height="1080" fill="#f7f8f7"/>
+  <rect width="2000" height="108" fill="url(#header)"/>
+  <text x="62" y="66" class="title">AgentShield — Core Analysis Workflow</text>
+  <rect x="1650" y="28" width="288" height="50" rx="25" fill="#ffffff" fill-opacity="0.12" stroke="#c8e1e3" stroke-opacity="0.35"/>
+  <circle cx="1684" cy="53" r="9" fill="#77d6a1"/>
+  <text x="1705" y="59" class="subtitle">Shared scan engine</text>
+
+  <!-- Pipeline -->
+  <rect x="38" y="136" width="1924" height="560" rx="22" fill="url(#pipelineBg)" stroke="#d0dee1"/>
+  <text x="66" y="168" class="lane">SHARED ANALYSIS PIPELINE</text>
+
+  <rect x="66" y="194" width="1868" height="66" rx="14" fill="#ffffff" stroke="#c7d7da"/>
+  <text x="96" y="220" class="provider-title">Scan target entering the shared workflow</text>
+  <text x="96" y="244" class="provider-text">GitHub repository  •  Uploaded dependency file  •  Pasted dependency list  •  Direct package coordinates</text>
+  <path d="M1000 260 V292" class="arrow"/>
+
+  <!-- Seven steps -->
+  <g>
+    <rect x="54" y="294" width="248" height="240" rx="16" fill="#ffffff" stroke="#809fa7" stroke-width="1.5"/>
+    <circle cx="86" cy="327" r="18" fill="#46636d"/><text x="81" y="332" class="step">1</text>
+    <text x="116" y="333" class="box-title">Normalize request</text>
+    <text x="80" y="371" class="box-text">• Validate the supplied target</text>
+    <text x="80" y="400" class="box-text">• Identify the input type</text>
+    <text x="80" y="429" class="box-text">• Resolve the selected mode</text>
+    <text x="80" y="458" class="box-text">• Create common scan state</text>
+    <rect x="80" y="485" width="194" height="27" rx="13" fill="#edf2f3"/>
+    <text x="103" y="503" class="small">One normalized request model</text>
+
+    <rect x="326" y="294" width="248" height="240" rx="16" fill="#f1fafb" stroke="#5ca1af" stroke-width="1.5"/>
+    <circle cx="358" cy="327" r="18" fill="#2f7f8d"/><text x="353" y="332" class="step">2</text>
+    <text x="388" y="333" class="box-title">Acquire dependencies</text>
+    <text x="352" y="371" class="box-text">Repository: GitHub SBOM first</text>
+    <text x="352" y="400" class="box-text">If unavailable: file fallback</text>
+    <text x="352" y="429" class="box-text">Upload/paste: select parser</text>
+    <text x="352" y="458" class="box-text">Package: direct inventory</text>
+    <rect x="352" y="485" width="194" height="27" rx="13" fill="#dff1f4"/>
+    <text x="374" y="503" class="small">Common dependency inventory</text>
+
+    <rect x="598" y="294" width="248" height="240" rx="16" fill="#ffffff" stroke="#809fa7" stroke-width="1.5"/>
+    <circle cx="630" cy="327" r="18" fill="#46636d"/><text x="625" y="332" class="step">3</text>
+    <text x="660" y="333" class="box-title">Classify coverage</text>
+    <text x="624" y="371" class="box-text">• Exact package versions</text>
+    <text x="624" y="400" class="box-text">• Version ranges</text>
+    <text x="624" y="429" class="box-text">• Missing versions</text>
+    <text x="624" y="465" class="small">Result type:</text>
+    <text x="624" y="488" class="small">vulnerability_scan / partial /</text>
+    <text x="624" y="509" class="small">discovery_only</text>
+
+    <rect x="870" y="294" width="248" height="240" rx="16" fill="#fff9ef" stroke="#cf9a3f" stroke-width="1.5"/>
+    <circle cx="902" cy="327" r="18" fill="#b67826"/><text x="897" y="332" class="step">4</text>
+    <text x="932" y="333" class="box-title">License metadata</text>
+    <text x="896" y="371" class="box-text">Use GitHub SPDX fields first</text>
+    <text x="896" y="400" class="box-text">Use deps.dev when missing</text>
+    <text x="896" y="429" class="box-text">Resolve default metadata version</text>
+    <text x="896" y="458" class="box-text">Preserve the evidence source</text>
+    <rect x="896" y="485" width="194" height="27" rx="13" fill="#fff0d3"/>
+    <text x="919" y="503" class="small">License evidence prepared</text>
+
+    <rect x="1142" y="294" width="248" height="240" rx="16" fill="#fff3f4" stroke="#c85f69" stroke-width="1.5"/>
+    <circle cx="1174" cy="327" r="18" fill="#b94f59"/><text x="1169" y="332" class="step">5</text>
+    <text x="1204" y="333" class="box-title">CVE research</text>
+    <text x="1168" y="371" class="box-text">Query exact versions with OSV</text>
+    <text x="1168" y="400" class="box-text">Skip and warn on unresolved ones</text>
+    <text x="1168" y="429" class="box-text">Enrich CVE IDs through NVD</text>
+    <text x="1168" y="458" class="box-text">Add severity and evidence</text>
+    <rect x="1168" y="485" width="194" height="27" rx="13" fill="#fbe0e2"/>
+    <text x="1196" y="503" class="small">Confirmed security findings</text>
+
+    <rect x="1414" y="294" width="248" height="240" rx="16" fill="#f6f1fa" stroke="#9875ae" stroke-width="1.5"/>
+    <circle cx="1446" cy="327" r="18" fill="#76538d"/><text x="1441" y="332" class="step">6</text>
+    <text x="1476" y="333" class="box-title">Mode enrichment</text>
+    <text x="1440" y="371" class="box-text">Fast: core scan only</text>
+    <text x="1440" y="400" class="box-text">Detailed: full deps.dev data</text>
+    <text x="1440" y="429" class="box-text">Developer: GitHub context</text>
+    <text x="1440" y="458" class="box-text">Add trust and package details</text>
+    <rect x="1440" y="485" width="194" height="27" rx="13" fill="#eadff2"/>
+    <text x="1469" y="503" class="small">Mode-specific information</text>
+
+    <rect x="1686" y="294" width="248" height="240" rx="16" fill="#eef8f2" stroke="#63a27d" stroke-width="1.5"/>
+    <circle cx="1718" cy="327" r="18" fill="#3c8359"/><text x="1713" y="332" class="step">7</text>
+    <text x="1748" y="333" class="box-title">Prepare scan results</text>
+    <text x="1712" y="371" class="box-text">Apply license policy</text>
+    <text x="1712" y="400" class="box-text">Create warnings and next steps</text>
+    <text x="1712" y="429" class="box-text">Prepare agent explanation context</text>
+    <text x="1712" y="458" class="box-text">Return scan data and summary</text>
+    <rect x="1712" y="485" width="194" height="27" rx="13" fill="#dff1e6"/>
+    <text x="1739" y="503" class="small">Structured scan results</text>
+  </g>
+
+  <path d="M302 414 H326" class="arrow"/>
+  <path d="M574 414 H598" class="arrow"/>
+  <path d="M846 414 H870" class="arrow"/>
+  <path d="M1118 414 H1142" class="arrow"/>
+  <path d="M1390 414 H1414" class="arrow"/>
+  <path d="M1662 414 H1686" class="arrow"/>
+
+  <!-- Coverage branch note -->
+  <rect x="598" y="558" width="792" height="52" rx="12" fill="#ffffff" stroke="#c9d6d9"/>
+  <circle cx="626" cy="584" r="8" fill="#d09a3c"/>
+  <text x="645" y="589" class="provider-text">If no exact versions are available, AgentShield returns discovery and license results without claiming that a CVE scan was completed.</text>
+  <path d="M722 534 V558" class="provider-arrow"/>
+
+  <!-- External providers -->
+  <rect x="66" y="630" width="1868" height="46" rx="12" fill="#ffffff" stroke="#d3dfe1"/>
+  <text x="92" y="659" class="provider-title">External data used:</text>
+  <text x="275" y="659" class="provider-text">GitHub — SBOM, repository files and metadata</text>
+  <circle cx="662" cy="653" r="4" fill="#70aeb7"/>
+  <text x="680" y="659" class="provider-text">deps.dev — versions, licenses, links and package metadata</text>
+  <circle cx="1111" cy="653" r="4" fill="#d2a049"/>
+  <text x="1129" y="659" class="provider-text">OSV — package advisories</text>
+  <circle cx="1370" cy="653" r="4" fill="#c8646d"/>
+  <text x="1388" y="659" class="provider-text">NVD — CVE detail and severity</text>
+  <circle cx="1671" cy="653" r="4" fill="#9875ae"/>
+  <text x="1689" y="659" class="provider-text">OCI — optional response writing</text>
+
+  <!-- Outputs -->
+  <rect x="38" y="724" width="1924" height="314" rx="22" fill="#ffffff" stroke="#d0dee1"/>
+  <text x="66" y="758" class="lane">FINAL OUTPUTS</text>
+  <path d="M1810 534 V700 H1000 V778" class="arrow"/>
+
+  <rect x="70" y="790" width="1250" height="212" rx="18" fill="#f8faf9" stroke="#bed0d4"/>
+  <text x="98" y="828" class="output-title">Manual scan results</text>
+  <text x="98" y="853" class="small">Displayed only after the user clicks Analyze dependencies</text>
+
+  <rect x="98" y="878" width="360" height="92" rx="14" fill="#eaf6f9" stroke="#68a9b7"/>
+  <text x="124" y="913" class="box-title">1. Discovered dependencies</text>
+  <text x="124" y="940" class="box-text">Inventory, ecosystem, source and version quality</text>
+
+  <rect x="480" y="878" width="360" height="92" rx="14" fill="#fff1f2" stroke="#c85f69"/>
+  <text x="506" y="913" class="box-title">2. Vulnerable dependencies</text>
+  <text x="506" y="940" class="box-text">Exact-version CVEs, severity and advisory evidence</text>
+
+  <rect x="862" y="878" width="430" height="92" rx="14" fill="#fff7e8" stroke="#cf9a3f"/>
+  <text x="888" y="913" class="box-title">3. Open-source license compliance</text>
+  <text x="888" y="940" class="box-text">Detected license, evidence source and policy status</text>
+
+  <rect x="1350" y="790" width="574" height="212" rx="18" fill="#f5eff9" stroke="#a88abd"/>
+  <text x="1378" y="828" class="output-title">Independent AgentShield response</text>
+  <text x="1378" y="864" class="box-text">• Sectioned natural-language explanation</text>
+  <text x="1378" y="894" class="box-text">• OCI-written when available</text>
+  <text x="1378" y="924" class="box-text">• Deterministic formatter as fallback</text>
+  <text x="1378" y="954" class="box-text">• Shown only in chat panel or expanded drawer</text>
+  <text x="1378" y="984" class="small">Chat never changes the manual result tables.</text>
+  <path d="M1810 534 V736 H1637 V790" class="purple-arrow"/>
+</svg>

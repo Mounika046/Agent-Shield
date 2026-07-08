@@ -1,0 +1,69 @@
+clis:
+  - codex
+installations:
+  codex:
+    baseUrl: https://nitro.oraclecorp.com/docs/
+    bundle: default
+    cli: codex
+    installedAt: 2026-06-30T05:57:15.347Z
+    manifestUrl: https://nitro.oraclecorp.com/docs/skills/codex/index.json
+    packsIndexSha256: f510c9b7410904e9cf2c13dfb2e2111458d5873542f0b0f44ab6cd578595c6a5
+    packsIndexUrl: https://nitro.oraclecorp.com/docs/packs/index.json
+    registryUrl: https://nitro.oraclecorp.com/docs/r/registry.json
+    scope: local
+    skills: &a1
+      - docx
+      - nitro-app-bootstrap
+      - nitro-app-doctor
+      - nitro-component-discovery
+      - nitro-extension-authoring
+      - nitro-migration-common
+      - nitro-pack-installer
+      - nitro-page-authoring
+      - nitro-sprint-presentation
+      - nitro-wrap-components
+      - oci-deploy
+      - ojet-mvvm-to-nitro-migrate
+      - pdf
+      - pptx
+      - rapid-to-nitro-migrate
+      - xlsx
+sources:
+  nitro-core:
+    artifacts:
+      files: []
+      guardrailOverlays: []
+      hooks: []
+      projectTemplates: []
+      skills: []
+    baseUrl: nitro:core
+    bundles:
+      - default
+    clis:
+      - codex
+    installedAt: 2026-06-30T05:56:28.492Z
+    manifestUrl: nitro:core
+    name: nitro-core
+    protectedPaths:
+      - intelligence.url
+      - intelligence.token
+      - relay.url
+      - relay.token
+    scope: local
+  index:
+    artifacts:
+      files: []
+      guardrailOverlays: []
+      hooks: []
+      projectTemplates: []
+      skills: *a1
+    baseUrl: https://nitro.oraclecorp.com/docs/
+    bundles:
+      - default
+    clis:
+      - codex
+    installedAt: 2026-06-30T05:57:15.347Z
+    manifestUrl: https://nitro.oraclecorp.com/docs/skills/codex/index.json
+    name: index
+    scope: local
+version: 2

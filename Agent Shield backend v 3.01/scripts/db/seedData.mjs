@@ -1,0 +1,122 @@
+export const scanSources = [
+  {
+    id: 'nvd',
+    name: 'NVD',
+    vendor: 'NIST',
+    channel: 'National feed',
+    url: 'https://nvd.nist.gov/vuln/data-feeds',
+  },
+  {
+    id: 'ghsa',
+    name: 'GitHub Advisory Database',
+    vendor: 'GitHub',
+    channel: 'Repository + package advisories',
+    url: 'https://github.com/advisories',
+  },
+  {
+    id: 'osv',
+    name: 'OSV',
+    vendor: 'Google',
+    channel: 'Open Source Vulnerability database',
+    url: 'https://osv.dev',
+  },
+  {
+    id: 'microsoft-msrc',
+    name: 'MSRC',
+    vendor: 'Microsoft',
+    channel: 'Vendor advisories',
+    url: 'https://msrc.microsoft.com/update-guide/vulnerability',
+  },
+  {
+    id: 'redhat-cve',
+    name: 'Red Hat CVE',
+    vendor: 'Red Hat',
+    channel: 'Enterprise Linux advisories',
+    url: 'https://access.redhat.com/security/security-updates/cve',
+  },
+  {
+    id: 'apple-security',
+    name: 'Apple Security Releases',
+    vendor: 'Apple',
+    channel: 'Platform releases',
+    url: 'https://support.apple.com/en-us/100100',
+  },
+]
+
+export const assetClasses = [
+  {
+    id: 'github-org',
+    name: 'GitHub Org',
+    description: 'GitHub organizations, repositories, package and workflow surfaces.',
+    defaultSourceIds: ['ghsa', 'nvd'],
+  },
+  {
+    id: 'server-apps-os',
+    name: 'Server Apps & OS',
+    description: 'Production server software, images, and operating systems.',
+    defaultSourceIds: ['nvd', 'redhat-cve', 'microsoft-msrc'],
+  },
+  {
+    id: 'laptop-apps-os',
+    name: 'Laptop Apps & OS',
+    description: 'Managed endpoint software and operating systems for workforce laptops.',
+    defaultSourceIds: ['nvd', 'microsoft-msrc', 'apple-security'],
+  },
+]
+
+export const assets = [
+  {
+    id: 'asset-gh-agentshield-org',
+    classId: 'github-org',
+    name: 'agentshield-org',
+    vendor: 'GitHub',
+    version: 'org-level',
+    os: 'N/A',
+    environment: 'SaaS',
+  },
+  {
+    id: 'asset-gh-platform-repo',
+    classId: 'github-org',
+    name: 'platform-core-repo',
+    vendor: 'GitHub',
+    version: 'v2026.04',
+    os: 'N/A',
+    environment: 'SaaS',
+  },
+  {
+    id: 'asset-srv-rhel-api',
+    classId: 'server-apps-os',
+    name: 'prod-api-rhel-cluster',
+    vendor: 'Red Hat',
+    version: 'RHEL 9.4',
+    os: 'RHEL',
+    environment: 'Production',
+  },
+  {
+    id: 'asset-srv-win-iis',
+    classId: 'server-apps-os',
+    name: 'corp-auth-iis-node',
+    vendor: 'Microsoft',
+    version: 'Windows Server 2022',
+    os: 'Windows Server',
+    environment: 'Production',
+  },
+  {
+    id: 'asset-lap-mac-fleet',
+    classId: 'laptop-apps-os',
+    name: 'engineering-macos-fleet',
+    vendor: 'Apple',
+    version: 'macOS 15',
+    os: 'macOS',
+    environment: 'Corporate',
+  },
+  {
+    id: 'asset-lap-win-fleet',
+    classId: 'laptop-apps-os',
+    name: 'ops-windows-fleet',
+    vendor: 'Microsoft',
+    version: 'Windows 11 24H2',
+    os: 'Windows 11',
+    environment: 'Corporate',
+  },
+]

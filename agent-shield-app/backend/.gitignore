@@ -1,0 +1,32 @@
+# Python caches and test output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.oci/
+*.pem
+
+# Logs and build output
+logs/
+*.log
+dist/
+build/
+*.egg-info/
+
+# Legacy JavaScript dependencies, if recreated locally
+node_modules/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

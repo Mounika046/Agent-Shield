@@ -1,0 +1,164 @@
+.page {
+  min-height: calc(100vh - 3.5rem);
+}
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nitro-spacing-6x, 1.5rem);
+  width: min(100%, 86rem);
+  margin: 0 auto;
+}
+
+.dropZone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nitro-spacing-6x, 1.5rem);
+  margin: var(--nitro-spacing-2x, 0.5rem) var(--nitro-spacing-6x, 1.5rem)
+    var(--nitro-spacing-6x, 1.5rem);
+  padding: var(--nitro-spacing-6x, 1.5rem);
+  border: 1px dashed var(--nitro-divider-color, rgba(22, 21, 19, 0.24));
+  border-radius: var(--nitro-border-radius-md, 0.5rem);
+  background: var(--nitro-bg-color-neutral-10, rgb(251, 249, 248));
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.dropZoneActive {
+  border-color: var(--nitro-focus-border-color, rgb(0, 104, 140));
+  background: var(--nitro-bg-color-info-subtle, rgb(239, 247, 250));
+}
+
+.dropZone strong {
+  display: block;
+  margin-bottom: var(--nitro-spacing-1x, 0.25rem);
+  font-size: var(--nitro-typography-body-lg-font-size, 1rem);
+}
+
+.dropZone p {
+  margin: 0;
+  color: var(--nitro-text-color-secondary, rgba(22, 21, 19, 0.72));
+  font-size: var(--nitro-typography-body-sm-font-size, 0.8125rem);
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.progressWrap {
+  padding: 0 var(--nitro-spacing-6x, 1.5rem) var(--nitro-spacing-6x, 1.5rem);
+}
+
+.capabilityGrid,
+.summaryGrid {
+  display: grid;
+  gap: var(--nitro-spacing-4x, 1rem);
+}
+
+.capabilityGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.summaryGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tableToolbar {
+  width: min(100%, 24rem);
+  padding: 0 var(--nitro-spacing-6x, 1.5rem) var(--nitro-spacing-4x, 1rem);
+}
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nitro-spacing-6x, 1.5rem);
+  min-width: 18rem;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--nitro-spacing-4x, 1rem);
+}
+
+.drawerHeader h2 {
+  margin: 0;
+  font-size: var(--nitro-typography-heading-sm-font-size, 1.25rem);
+}
+
+.eyebrow {
+  margin: 0 0 var(--nitro-spacing-1x, 0.25rem);
+  color: var(--nitro-text-color-secondary, rgba(22, 21, 19, 0.72));
+  font-size: var(--nitro-typography-body-xs-font-size, 0.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detailList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--nitro-spacing-5x, 1.25rem);
+  margin: 0;
+}
+
+.detailList div {
+  min-width: 0;
+}
+
+.detailList dt {
+  margin-bottom: var(--nitro-spacing-1x, 0.25rem);
+  color: var(--nitro-text-color-secondary, rgba(22, 21, 19, 0.72));
+  font-size: var(--nitro-typography-body-xs-font-size, 0.75rem);
+}
+
+.detailList dd {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.detailWide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1023px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .dropZone {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-inline: var(--nitro-spacing-4x, 1rem);
+  }
+
+  .capabilityGrid,
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tableToolbar {
+    width: auto;
+    padding-inline: var(--nitro-spacing-4x, 1rem);
+  }
+
+  .detailList {
+    grid-template-columns: 1fr;
+  }
+
+  .detailWide {
+    grid-column: auto;
+  }
+}

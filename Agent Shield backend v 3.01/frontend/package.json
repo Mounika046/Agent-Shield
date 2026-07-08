@@ -1,0 +1,36 @@
+{
+  "name": "agent-shield-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "shadcn:nitro": "NO_PROXY=localhost,127.0.0.1 no_proxy=localhost,127.0.0.1 HTTPS_PROXY= HTTP_PROXY= https_proxy= http_proxy= REGISTRY_URL=https://nitro.oraclecorp.com/docs/r SHADCN_DISABLE_ANALYTICS=1 DO_NOT_TRACK=1 CI=1 shadcn",
+    "verify": "nitro-cli verify"
+  },
+  "dependencies": {
+    "@idp/nitro-providers": "2.1.0",
+    "@idp/nitro-redwood": "2.1.0",
+    "@tanstack/react-router": "^1.120.0",
+    "clsx": "^2.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-force-graph-2d": "^1.29.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@myerscarpenter/cdp-cli": "^2.3.1",
+    "@playwright/cli": "^0.1.1",
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vedanth/context7": "^1.0.2",
+    "@vitejs/plugin-react-swc": "^3.10.0",
+    "shadcn": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

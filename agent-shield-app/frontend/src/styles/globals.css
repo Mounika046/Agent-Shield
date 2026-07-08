@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "@idp/nitro-redwood/nitro.css";
+
+:root {
+  --nitro-sp-rw-lilac-rgb-130: 79, 85, 115;
+  --nitro-sp-rw-lilac-rgb-140: 70, 76, 104;
+  --nitro-sp-rw-lilac-rgb-150: 60, 66, 91;
+  --nitro-sp-rw-lilac-rgb-160: 48, 54, 76;
+  --nitro-sp-rw-lilac-rgb-170: 42, 45, 63;
+
+  --nitro-sp-theme-guided-process-bkgd-10: rgb(var(--nitro-sp-rw-lilac-rgb-130));
+  --nitro-sp-theme-guided-process-bkgd-20: rgb(var(--nitro-sp-rw-lilac-rgb-140));
+  --nitro-sp-theme-guided-process-bkgd-30: rgb(var(--nitro-sp-rw-lilac-rgb-150));
+  --nitro-sp-theme-guided-process-bkgd-40: rgb(var(--nitro-sp-rw-lilac-rgb-160));
+  --nitro-sp-theme-guided-process-bkgd-50: rgb(var(--nitro-sp-rw-lilac-rgb-170));
+
+  --nitro-palette-warning-rgb-20: 253, 242, 229;
+  --nitro-palette-warning-rgb-60: 240, 169, 87;
+  --nitro-palette-warning-rgb-120: 143, 82, 10;
+
+  --radius: 0.25rem;
+}
+
+/*
+ * Keep app-local shadcn defaults scoped to the default Redwood theme.
+ * The imported Nitro CSS defines Bluewood semantic variables on
+ * `.nitro-theme-bluewood`; an unqualified app `:root` block comes later in
+ * the cascade and would otherwise replace Bluewood foreground/card/popover
+ * aliases with light-theme values.
+ */
+:root:not(.nitro-theme-bluewood) {
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(22, 21, 19);
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(22, 21, 19);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(22, 21, 19);
+  --primary: rgb(0, 104, 140);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(241, 239, 237);
+  --secondary-foreground: rgb(22, 21, 19);
+  --muted: rgb(241, 239, 237);
+  --muted-foreground: rgba(22, 21, 19, 0.7);
+  --accent: rgb(225, 237, 243);
+  --accent-foreground: rgb(0, 104, 140);
+  --destructive: rgb(201, 37, 45);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgba(22, 21, 19, 0.12);
+  --input: rgba(22, 21, 19, 0.5);
+  --ring: rgb(0, 104, 140);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --radius: var(--radius);
+}

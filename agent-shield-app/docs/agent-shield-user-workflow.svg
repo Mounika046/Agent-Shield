@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+  <title id="title">AgentShield user workflow</title>
+  <desc id="desc">Non-technical workflow showing how a user completes a manual scan or uses Ask AgentShield, reviews results, and takes follow-up action.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123744"/>
+      <stop offset="0.62" stop-color="#1c5961"/>
+      <stop offset="1" stop-color="#31706f"/>
+    </linearGradient>
+    <linearGradient id="manualPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4fbfc"/>
+      <stop offset="1" stop-color="#e8f5f7"/>
+    </linearGradient>
+    <linearGradient id="chatPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf8fd"/>
+      <stop offset="1" stop-color="#f1eaf7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17333d" flood-opacity="0.13"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#46636d"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#76538d"/>
+    </marker>
+    <style>
+      * { filter: none; }
+      .title { font: 700 35px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .subtitle { font: 400 17px 'Segoe UI', Arial, sans-serif; fill: #d7e8eb; }
+      .section { font: 700 14px 'Segoe UI', Arial, sans-serif; letter-spacing: 1.5px; fill: #536a72; }
+      .panel-title { font: 700 23px 'Segoe UI', Arial, sans-serif; fill: #17333d; }
+      .box-title { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #17333d; }
+      .box-text { font: 400 14px 'Segoe UI', Arial, sans-serif; fill: #526b74; }
+      .small { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #657b83; }
+      .step { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .chip { font: 700 12px 'Segoe UI', Arial, sans-serif; }
+      .on-dark-title { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .on-dark-text { font: 400 14px 'Segoe UI', Arial, sans-serif; fill: #e9f4f5; }
+      .on-dark-small { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #d3e7e9; }
+      .arrow { fill: none; stroke: #46636d; stroke-width: 3; marker-end: url(#arrow); }
+      .chat-arrow { fill: none; stroke: #76538d; stroke-width: 3; marker-end: url(#arrowPurple); }
+      .loop { fill: none; stroke: #9a7bae; stroke-width: 2.5; stroke-dasharray: 7 6; marker-end: url(#arrowPurple); }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#f7f8f7"/>
+  <rect width="1800" height="104" fill="url(#header)"/>
+  <text x="58" y="49" class="title">AgentShield — User Workflow</text>
+  <text x="58" y="78" class="subtitle">From selecting a scan target to reviewing security and license-compliance results</text>
+  <rect x="1522" y="27" width="220" height="48" rx="24" fill="#fff" fill-opacity="0.12" stroke="#c8e1e3" stroke-opacity="0.35"/>
+  <circle cx="1554" cy="51" r="9" fill="#77d6a1"/>
+  <text x="1575" y="57" class="subtitle">User journey</text>
+
+  <!-- Start -->
+  <text x="60" y="145" class="section">01  START</text>
+  <rect x="640" y="126" width="520" height="74" rx="37" fill="#ffffff" stroke="#7da8b1" filter="url(#shadow)"/>
+  <circle cx="687" cy="163" r="22" fill="#2f7f8d"/>
+  <path d="M678 163 l7 7 13 -15" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="725" y="158" class="box-title">Open AgentShield</text>
+  <text x="725" y="181" class="box-text">Confirm that the backend status shows connected</text>
+
+  <path d="M900 200 V238" class="arrow"/>
+  <polygon points="900,238 1010,298 900,358 790,298" fill="#ffffff" stroke="#789da6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="847" y="294" class="box-title">How do you</text>
+  <text x="847" y="317" class="box-title">want to scan?</text>
+
+  <!-- Branch panels -->
+  <rect x="48" y="390" width="824" height="482" rx="22" fill="url(#manualPanel)" stroke="#a8cbd1"/>
+  <rect x="928" y="390" width="824" height="482" rx="22" fill="url(#chatPanel)" stroke="#c7b0d4"/>
+  <text x="76" y="423" class="section">02A  MANUAL SCAN WORKFLOW</text>
+  <text x="956" y="423" class="section">02B  ASK AGENTSHIELD WORKFLOW</text>
+
+  <path d="M790 298 H460 V446" class="arrow"/>
+  <text x="604" y="286" class="small">Manual scan</text>
+  <path d="M1010 298 H1340 V446" class="chat-arrow"/>
+  <text x="1117" y="286" class="small" fill="#76538d">Natural-language chat</text>
+
+  <!-- Manual steps -->
+  <rect x="80" y="446" width="350" height="128" rx="16" fill="#ffffff" stroke="#73afba" filter="url(#shadow)"/>
+  <circle cx="110" cy="476" r="17" fill="#2f7f8d"/><text x="105" y="481" class="step">1</text>
+  <text x="139" y="482" class="box-title">Choose the input</text>
+  <text x="105" y="516" class="box-text">Repository • Dependency file</text>
+  <text x="105" y="541" class="box-text">Pasted list • Direct package</text>
+
+  <rect x="472" y="446" width="366" height="128" rx="16" fill="#ffffff" stroke="#73afba" filter="url(#shadow)"/>
+  <circle cx="502" cy="476" r="17" fill="#2f7f8d"/><text x="497" y="481" class="step">2</text>
+  <text x="531" y="482" class="box-title">Provide target details</text>
+  <text x="497" y="516" class="box-text">Enter the URL, upload the file,</text>
+  <text x="497" y="541" class="box-text">or provide package names and versions</text>
+
+  <path d="M430 510 H472" class="arrow"/>
+
+  <rect x="80" y="612" width="478" height="140" rx="16" fill="#ffffff" stroke="#73afba" filter="url(#shadow)"/>
+  <circle cx="110" cy="643" r="17" fill="#2f7f8d"/><text x="105" y="648" class="step">3</text>
+  <text x="139" y="649" class="box-title">Choose the analysis depth</text>
+  <rect x="106" y="674" width="92" height="28" rx="14" fill="#dff0f3"/><text x="132" y="693" class="chip" fill="#256b78">FAST</text>
+  <rect x="210" y="674" width="114" height="28" rx="14" fill="#fff1d9"/><text x="231" y="693" class="chip" fill="#9a651b">DETAILED</text>
+  <rect x="336" y="674" width="124" height="28" rx="14" fill="#eee5f5"/><text x="357" y="693" class="chip" fill="#76538d">DEVELOPER</text>
+  <text x="106" y="728" class="small">Quick check → more context → deepest technical review</text>
+
+  <rect x="604" y="612" width="234" height="140" rx="16" fill="#287987" stroke="#1f6570" filter="url(#shadow)"/>
+  <circle cx="634" cy="643" r="17" fill="#ffffff" fill-opacity="0.2"/><text x="629" y="648" class="step">4</text>
+  <text x="663" y="649" class="on-dark-title">Run analysis</text>
+  <text x="630" y="687" class="on-dark-text">Click Analyze dependencies</text>
+  <text x="630" y="715" class="on-dark-small">Wait for the scan to finish</text>
+
+  <path d="M655 574 V590 H319 V612" class="arrow"/>
+  <path d="M558 682 H604" class="arrow"/>
+
+  <!-- Chat steps -->
+  <rect x="960" y="446" width="350" height="128" rx="16" fill="#ffffff" stroke="#a88abd" filter="url(#shadow)"/>
+  <circle cx="990" cy="476" r="17" fill="#76538d"/><text x="985" y="481" class="step">1</text>
+  <text x="1019" y="482" class="box-title">Write the request</text>
+  <text x="985" y="516" class="box-text">Example: Check PyPI requests</text>
+  <text x="985" y="541" class="box-text">2.31.0 for CVEs and license risk</text>
+
+  <polygon points="1494,440 1622,510 1494,580 1366,510" fill="#ffffff" stroke="#a88abd" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1447" y="505" class="box-title">Enough</text>
+  <text x="1447" y="528" class="box-title">information?</text>
+  <path d="M1310 510 H1366" class="chat-arrow"/>
+
+  <rect x="960" y="640" width="300" height="108" rx="16" fill="#fff7e9" stroke="#d6a553"/>
+  <text x="986" y="676" class="box-title">Answer clarification</text>
+  <text x="986" y="706" class="box-text">Add the missing version, ecosystem,</text>
+  <text x="986" y="730" class="box-text">repository URL or file details</text>
+
+  <rect x="1370" y="640" width="332" height="108" rx="16" fill="#76538d" stroke="#644377" filter="url(#shadow)"/>
+  <text x="1398" y="676" class="on-dark-title">Agent runs the analysis</text>
+  <text x="1398" y="706" class="on-dark-text">The selected target is scanned</text>
+  <text x="1398" y="730" class="on-dark-small">Manual results remain unchanged</text>
+
+  <path d="M1494 580 V610 H1110 V640" class="loop"/>
+  <text x="1259" y="602" class="small" fill="#76538d">No</text>
+  <path d="M1622 510 H1682 V640 H1536" class="chat-arrow"/>
+  <text x="1644" y="496" class="small" fill="#76538d">Yes</text>
+  <path d="M960 694 H930 V510 H960" class="loop"/>
+
+  <!-- Results -->
+  <text x="60" y="917" class="section">03  REVIEW THE RESULTS</text>
+
+  <rect x="48" y="936" width="1094" height="160" rx="20" fill="#ffffff" stroke="#bfd1d5" filter="url(#shadow)"/>
+  <text x="76" y="970" class="panel-title">Manual scan results</text>
+  <rect x="76" y="992" width="320" height="78" rx="14" fill="#edf7fa" stroke="#76adba"/>
+  <text x="100" y="1023" class="box-title">1. Discovered dependencies</text>
+  <text x="100" y="1048" class="small">Packages, versions and source</text>
+  <rect x="420" y="992" width="320" height="78" rx="14" fill="#fff3f3" stroke="#ca6f77"/>
+  <text x="444" y="1023" class="box-title">2. Vulnerable dependencies</text>
+  <text x="444" y="1048" class="small">CVEs, severity and evidence</text>
+  <rect x="764" y="992" width="348" height="78" rx="14" fill="#fff8eb" stroke="#d0a354"/>
+  <text x="788" y="1023" class="box-title">3. License compliance</text>
+  <text x="788" y="1048" class="small">Allowed, review or denied</text>
+
+  <rect x="1176" y="936" width="576" height="160" rx="20" fill="#f7f2fa" stroke="#c4add1" filter="url(#shadow)"/>
+  <text x="1204" y="970" class="panel-title">AgentShield response</text>
+  <text x="1204" y="1004" class="box-text">Read the sectioned explanation in the chat panel.</text>
+  <text x="1204" y="1031" class="box-text">Use Expand or View full analysis for long responses.</text>
+  <text x="1204" y="1058" class="box-text">Clear the conversation when starting a new request.</text>
+
+  <path d="M721 752 V900 H595 V936" class="arrow"/>
+  <path d="M1536 748 V900 H1464 V936" class="chat-arrow"/>
+
+  <!-- Follow up -->
+  <rect x="48" y="1120" width="1704" height="42" rx="21" fill="#173d48"/>
+  <text x="81" y="1147" class="on-dark-title">Next actions:</text>
+  <text x="226" y="1147" class="on-dark-text">Upgrade vulnerable packages</text>
+  <circle cx="459" cy="1141" r="4" fill="#7fc4c6"/>
+  <text x="481" y="1147" class="on-dark-text">Pin unresolved versions</text>
+  <circle cx="704" cy="1141" r="4" fill="#7fc4c6"/>
+  <text x="726" y="1147" class="on-dark-text">Review licenses requiring attention</text>
+  <circle cx="1044" cy="1141" r="4" fill="#7fc4c6"/>
+  <text x="1066" y="1147" class="on-dark-text">Apply changes and run AgentShield again</text>
+</svg>

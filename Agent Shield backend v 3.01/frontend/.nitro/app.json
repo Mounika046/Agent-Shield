@@ -1,0 +1,14 @@
+{
+  "installedPacks": [],
+  "name": "agent-shield-ui",
+  "routes": [
+    {
+      "exportName": "AgentShieldPage",
+      "id": "agent-shield",
+      "label": "Agent Shield",
+      "modulePath": "../pages/AgentShieldPage.js",
+      "path": "/"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1160" viewBox="0 0 1800 1160" role="img" aria-labelledby="title desc">
+  <title id="title">AgentShield complete application flow</title>
+  <desc id="desc">End-to-end architecture showing manual and chat inputs, FastAPI routes, the shared LangGraph scan pipeline, external security providers, and separate manual and chat outputs.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123744"/>
+      <stop offset="0.58" stop-color="#1c5961"/>
+      <stop offset="1" stop-color="#31706f"/>
+    </linearGradient>
+    <linearGradient id="manual" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f5f7"/>
+      <stop offset="1" stop-color="#d5edf1"/>
+    </linearGradient>
+    <linearGradient id="chat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2ecf8"/>
+      <stop offset="1" stop-color="#e7dbf2"/>
+    </linearGradient>
+    <linearGradient id="backend" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9fafb"/>
+      <stop offset="1" stop-color="#f2f5f6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#17333d" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#46636d"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#76538d"/>
+    </marker>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .subtitle { font: 400 17px 'Segoe UI', Arial, sans-serif; fill: #d7e8eb; }
+      .lane-title { font: 700 14px 'Segoe UI', Arial, sans-serif; letter-spacing: 1.6px; fill: #49616a; }
+      .box-title { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #17333d; }
+      .box-text { font: 400 14px 'Segoe UI', Arial, sans-serif; fill: #49616a; }
+      .small { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #5e747c; }
+      .chip { font: 700 12px 'Segoe UI', Arial, sans-serif; letter-spacing: .4px; }
+      .step { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #fff; }
+      .provider-title { font: 700 15px 'Segoe UI', Arial, sans-serif; fill: #17333d; }
+      .provider-text { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #5e747c; }
+      .arrow { fill: none; stroke: #46636d; stroke-width: 3; marker-end: url(#arrow); }
+      .chat-arrow { fill: none; stroke: #76538d; stroke-width: 3; marker-end: url(#arrowPurple); }
+      .provider-arrow { fill: none; stroke: #80949b; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1160" fill="#f7f8f7"/>
+  <rect x="0" y="0" width="1800" height="104" fill="url(#header)"/>
+  <text id="diagram-title" x="58" y="48" class="title">AgentShield — Complete Application Flow</text>
+  <text x="58" y="77" class="subtitle">Dependency discovery • CVE analysis • Open-source license compliance • Independent conversational agent</text>
+  <rect x="1492" y="27" width="250" height="48" rx="24" fill="#ffffff" fill-opacity="0.12" stroke="#c8e1e3" stroke-opacity="0.35"/>
+  <circle cx="1524" cy="51" r="9" fill="#77d6a1"/>
+  <text x="1544" y="57" class="subtitle">Nitro + React + FastAPI</text>
+
+  <!-- Frontend lane -->
+  <rect x="36" y="128" width="1728" height="238" rx="20" fill="#ffffff" stroke="#dce4e6"/>
+  <text x="60" y="157" class="lane-title">01  USER EXPERIENCE — NITRO REDWOOD FRONTEND</text>
+
+  <rect x="66" y="180" width="316" height="154" rx="16" fill="url(#manual)" stroke="#74aeb9" filter="url(#shadow)"/>
+  <circle cx="99" cy="213" r="18" fill="#2f7f8d"/>
+  <text x="92" y="218" class="step">1</text>
+  <text x="128" y="219" class="box-title">Manual scan</text>
+  <text x="91" y="250" class="box-text">• GitHub repository</text>
+  <text x="91" y="273" class="box-text">• Dependency file upload</text>
+  <text x="91" y="296" class="box-text">• Pasted dependency list</text>
+  <text x="91" y="319" class="box-text">• Direct package coordinates</text>
+
+  <rect x="414" y="180" width="264" height="154" rx="16" fill="#f5fafb" stroke="#9fc3ca"/>
+  <text x="440" y="213" class="box-title">Choose analysis mode</text>
+  <rect x="440" y="232" width="64" height="25" rx="12" fill="#dff0f3"/>
+  <text x="457" y="249" class="chip" fill="#256b78">FAST</text>
+  <text x="440" y="280" class="box-text">Detailed — adds deps.dev</text>
+  <text x="440" y="306" class="box-text">Developer — adds GitHub context</text>
+
+  <rect x="718" y="180" width="316" height="154" rx="16" fill="url(#chat)" stroke="#a889bd" filter="url(#shadow)"/>
+  <circle cx="751" cy="213" r="18" fill="#76538d"/>
+  <text x="744" y="218" class="step">1</text>
+  <text x="780" y="219" class="box-title">Ask AgentShield</text>
+  <text x="743" y="252" class="box-text">Natural-language scan instruction</text>
+  <text x="743" y="278" class="box-text">Independent from the manual form</text>
+  <text x="743" y="304" class="box-text">Compact panel or expanded drawer</text>
+
+  <rect x="1074" y="180" width="286" height="154" rx="16" fill="#fbf9fd" stroke="#c1a9d0"/>
+  <text x="1100" y="213" class="box-title">Frontend API client</text>
+  <text x="1100" y="247" class="box-text">POST /api/scan</text>
+  <text x="1100" y="274" class="box-text">POST /api/agent/chat</text>
+  <text x="1100" y="301" class="box-text">GET /api/health</text>
+
+  <rect x="1400" y="180" width="326" height="154" rx="16" fill="#f8faf9" stroke="#b7c9c4"/>
+  <text x="1426" y="213" class="box-title">Frontend state isolation</text>
+  <text x="1426" y="247" class="box-text">Manual scans update result tables</text>
+  <text x="1426" y="274" class="box-text">Chat responses stay inside chat</text>
+  <text x="1426" y="301" class="box-text">One path never overwrites the other</text>
+
+  <path d="M382 257 H414" class="arrow"/>
+  <path d="M1034 257 H1074" class="chat-arrow"/>
+  <path d="M1360 257 H1400" class="arrow"/>
+
+  <!-- API lane -->
+  <rect x="36" y="390" width="1728" height="150" rx="20" fill="#eef3f4" stroke="#d2dfe2"/>
+  <text x="60" y="419" class="lane-title">02  FASTAPI ENTRY AND CONVERSATIONAL CONTROL</text>
+
+  <rect x="166" y="442" width="260" height="70" rx="14" fill="#ffffff" stroke="#7eabb4" filter="url(#shadow)"/>
+  <text x="195" y="472" class="box-title">POST /scan</text>
+  <text x="195" y="494" class="small">Structured request → shared pipeline</text>
+
+  <rect x="538" y="442" width="328" height="70" rx="14" fill="#ffffff" stroke="#9c7db0" filter="url(#shadow)"/>
+  <text x="567" y="472" class="box-title">POST /agent/chat</text>
+  <text x="567" y="494" class="small">Message → conversational controller</text>
+
+  <rect x="978" y="432" width="408" height="90" rx="14" fill="#fbf8fd" stroke="#ad91be"/>
+  <text x="1004" y="461" class="box-title">Input interpretation and validation</text>
+  <text x="1004" y="485" class="box-text">OCI model when available; deterministic fallback otherwise</text>
+  <text x="1004" y="507" class="small">Exactly one complete target → execute; otherwise clarify</text>
+
+  <rect x="1490" y="442" width="220" height="70" rx="14" fill="#fff6e8" stroke="#d7a955"/>
+  <text x="1518" y="472" class="box-title">Clarification</text>
+  <text x="1518" y="494" class="small">No backend scan is run</text>
+
+  <path d="M546 334 V374 H296 V442" class="arrow"/>
+  <path d="M876 334 V390 H702 V442" class="chat-arrow"/>
+  <path d="M866 477 H978" class="chat-arrow"/>
+  <path d="M1386 477 H1490" class="chat-arrow"/>
+  <text x="1404" y="464" class="small" fill="#76538d">needs input</text>
+
+  <!-- Backend lane -->
+  <rect x="36" y="564" width="1728" height="378" rx="20" fill="url(#backend)" stroke="#d2dfe2"/>
+  <text x="60" y="594" class="lane-title">03  SHARED LANGGRAPH SCAN PIPELINE</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="632" width="196" height="190" rx="16" fill="#ffffff" stroke="#88a9b1"/>
+    <circle cx="99" cy="661" r="16" fill="#46636d"/><text x="94" y="666" class="step">1</text>
+    <text x="124" y="667" class="box-title">Normalize</text>
+    <text x="94" y="703" class="box-text">Validate request context</text>
+    <text x="94" y="730" class="box-text">Identify input type</text>
+    <text x="94" y="757" class="box-text">Resolve selected mode</text>
+    <text x="94" y="784" class="box-text">Create workflow state</text>
+
+    <rect x="286" y="632" width="216" height="190" rx="16" fill="#ffffff" stroke="#62a5b2"/>
+    <circle cx="315" cy="661" r="16" fill="#2f7f8d"/><text x="310" y="666" class="step">2</text>
+    <text x="340" y="667" class="box-title">Acquire</text>
+    <text x="310" y="703" class="box-text">Repo: GitHub SBOM first</text>
+    <text x="310" y="730" class="box-text">Fallback: repository files</text>
+    <text x="310" y="757" class="box-text">File: format parser</text>
+    <text x="310" y="784" class="box-text">Package: direct inventory</text>
+
+    <rect x="522" y="632" width="216" height="190" rx="16" fill="#ffffff" stroke="#7da3ae"/>
+    <circle cx="551" cy="661" r="16" fill="#46636d"/><text x="546" y="666" class="step">3</text>
+    <text x="576" y="667" class="box-title">Classify coverage</text>
+    <text x="546" y="703" class="box-text">Exact versions</text>
+    <text x="546" y="730" class="box-text">Range / unknown versions</text>
+    <text x="546" y="757" class="box-text">vulnerability_scan</text>
+    <text x="546" y="784" class="box-text">partial / discovery_only</text>
+
+    <rect x="758" y="632" width="216" height="190" rx="16" fill="#fffaf1" stroke="#d2a14b"/>
+    <circle cx="787" cy="661" r="16" fill="#b67826"/><text x="782" y="666" class="step">4</text>
+    <text x="812" y="667" class="box-title">License metadata</text>
+    <text x="782" y="703" class="box-text">Use SBOM SPDX fields</text>
+    <text x="782" y="730" class="box-text">deps.dev for missing data</text>
+    <text x="782" y="757" class="box-text">Default-version lookup</text>
+    <text x="782" y="784" class="box-text">Preserve source evidence</text>
+
+    <rect x="994" y="632" width="216" height="190" rx="16" fill="#fff5f5" stroke="#c96970"/>
+    <circle cx="1023" cy="661" r="16" fill="#b94f59"/><text x="1018" y="666" class="step">5</text>
+    <text x="1048" y="667" class="box-title">CVE research</text>
+    <text x="1018" y="703" class="box-text">OSV: exact versions only</text>
+    <text x="1018" y="730" class="box-text">Skip unresolved versions</text>
+    <text x="1018" y="757" class="box-text">NVD: CVE enrichment</text>
+    <text x="1018" y="784" class="box-text">Severity and evidence</text>
+
+    <rect x="1230" y="632" width="216" height="190" rx="16" fill="#f5f1fa" stroke="#9d7bb3"/>
+    <circle cx="1259" cy="661" r="16" fill="#76538d"/><text x="1254" y="666" class="step">6</text>
+    <text x="1284" y="667" class="box-title">Mode enrichment</text>
+    <text x="1254" y="703" class="box-text">Fast: no extra stage</text>
+    <text x="1254" y="730" class="box-text">Detailed: full deps.dev</text>
+    <text x="1254" y="757" class="box-text">Developer: GitHub API</text>
+    <text x="1254" y="784" class="box-text">Build trust/context data</text>
+
+    <rect x="1466" y="632" width="220" height="190" rx="16" fill="#f1f8f4" stroke="#6ca181"/>
+    <circle cx="1495" cy="661" r="16" fill="#3c8359"/><text x="1490" y="666" class="step">7</text>
+    <text x="1520" y="667" class="box-title">Build report</text>
+    <text x="1490" y="703" class="box-text">License compliance</text>
+    <text x="1490" y="730" class="box-text">LLM context</text>
+    <text x="1490" y="757" class="box-text">Warnings and next steps</text>
+    <text x="1490" y="784" class="box-text">JSON report + summary</text>
+  </g>
+
+  <path d="M266 727 H286" class="arrow"/>
+  <path d="M502 727 H522" class="arrow"/>
+  <path d="M738 727 H758" class="arrow"/>
+  <path d="M974 727 H994" class="arrow"/>
+  <path d="M1210 727 H1230" class="arrow"/>
+  <path d="M1446 727 H1466" class="arrow"/>
+  <path d="M296 512 V598 H168 V632" class="arrow"/>
+  <path d="M1182 522 V598 H168 V632" class="chat-arrow"/>
+  <text x="1030" y="585" class="small" fill="#76538d">validated target</text>
+
+  <!-- provider callouts -->
+  <rect x="91" y="846" width="1590" height="70" rx="14" fill="#ffffff" stroke="#d9e2e4"/>
+  <text x="118" y="874" class="provider-title">External providers</text>
+  <text x="118" y="898" class="provider-text">GitHub API — SBOM, tree, files, repository metadata</text>
+  <text x="516" y="898" class="provider-text">deps.dev — versions, licenses, links, metadata</text>
+  <text x="878" y="898" class="provider-text">OSV — package advisories</text>
+  <text x="1117" y="898" class="provider-text">NVD — CVE details</text>
+  <text x="1333" y="898" class="provider-text">OCI model — optional chat stages</text>
+  <path d="M394 822 V846" class="provider-arrow"/>
+  <path d="M866 822 V846" class="provider-arrow"/>
+  <path d="M1102 822 V846" class="provider-arrow"/>
+  <path d="M1338 822 V846" class="provider-arrow"/>
+
+  <!-- Output lane -->
+  <rect x="36" y="966" width="1728" height="160" rx="20" fill="#ffffff" stroke="#dce4e6"/>
+  <text x="60" y="995" class="lane-title">04  SEPARATE OUTPUT EXPERIENCES</text>
+
+  <rect x="76" y="1017" width="330" height="82" rx="14" fill="#edf7fa" stroke="#76adba"/>
+  <text x="102" y="1048" class="box-title">1. Discovered dependencies</text>
+  <text x="102" y="1073" class="small">Inventory, ecosystem, source and version quality</text>
+
+  <rect x="430" y="1017" width="330" height="82" rx="14" fill="#fff3f3" stroke="#ca6f77"/>
+  <text x="456" y="1048" class="box-title">2. Vulnerable dependencies</text>
+  <text x="456" y="1073" class="small">Exact-version CVEs, severity and advisory IDs</text>
+
+  <rect x="784" y="1017" width="358" height="82" rx="14" fill="#fff8eb" stroke="#d0a354"/>
+  <text x="810" y="1048" class="box-title">3. License compliance</text>
+  <text x="810" y="1073" class="small">Allowed, review, denied and overall status</text>
+
+  <rect x="1218" y="1017" width="482" height="82" rx="14" fill="#f4eff8" stroke="#a98cba"/>
+  <text x="1244" y="1048" class="box-title">Independent AgentShield response</text>
+  <text x="1244" y="1073" class="small">OCI-written or deterministic explanation; never changes manual tables</text>
+
+  <path d="M1576 822 V938 H595 V1017" class="arrow"/>
+  <path d="M1576 822 V938 H1459 V1017" class="chat-arrow"/>
+</svg>
